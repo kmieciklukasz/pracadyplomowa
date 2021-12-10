@@ -30,11 +30,10 @@
         </div>
       </div>
     </div>
+
+    <div class="formularz"></div>
   </div>
 </template>
-
-
-
 
 <script>
 export default {
@@ -87,5 +86,9 @@ export default {
 
 .nav:hover {
   background-color: rgb(85, 84, 84);
+}
+.formularz {
+  height: 50%;
+  widows: 50%;
 }
 </style>

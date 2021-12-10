@@ -32,9 +32,6 @@
   </b-nav>
 </template>
 
-
-
-
 <script>
 export default {
   name: "navigation",

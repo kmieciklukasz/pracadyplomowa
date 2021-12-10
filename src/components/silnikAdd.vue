@@ -1,10 +1,10 @@
 <template>
   <b-card title="Podaj swoje dane" header-tag="header" footer-tag="footer">
-    <h6 slot="header" class="mb-0">Dodaj rozwiązanie</h6>
+    <h6 slot="header" class="mb-0">Jak możemy ci pomóc ?</h6>
     <b-card-text>
       <b-row class="my-2">
         <b-col sm="2">
-          <label for="input-small">Imieę:</label>
+          <label for="input-small">Krótka nazwa problemu:</label>
         </b-col>
         <b-col sm="10">
           <b-form-input
