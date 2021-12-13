@@ -1,55 +1,90 @@
 <template>
   <div id="app">
-    <div class="white-background">
-      <Navigation />
-    </div>
-
-    <transition name="fade" mode="out-in">
-      <router-view />
-    </transition>
-
+    <Navigation />
     <b-jumbotron class="full-height white-bg">
-      <template v-slot:header>Silnik</template>
-
-      <template v-slot:lead> </template>
-
-      <hr class="my-4" />
+      <template v-slot:header
+        >Silnik</template
+      >
     </b-jumbotron>
+    <hr class="my-4" />
+    <b-container>
+      <transition name="fade" mode="out-in">
+        <div key="1" v-if="loading" class="d-flex justify-content-center my-5">
+          <b-spinner variant="primary" />
+        </div>
+
+        <b-row key="2" v-else>
+          <b-col sm="3" :key="nodeId" v-for="(player, nodeId) in players">
+            <Card
+              :nazwa="player.nazwa"
+              :marka="player.marka"
+              :pojemnosc="player.pojemnosc"
+              :rok="player.rok"
+              :paliwo="player.paliwo"
+              :opis="player.opis"
+              :rozwiazanie="player.rozwiazanie"
+              :photo="player.photo"
+            />
+          </b-col>
+        </b-row>
+      </transition>
+    </b-container>
   </div>
 </template>
 
 <script>
+import Card from "/Praca Dyplomowa/pracadyplomowa/src/components/Card";
 import Navigation from "/Praca Dyplomowa/pracadyplomowa/src/components/Navigation.vue";
 export default {
-  name: "home",
+  data() {
+    return {
+      loading: true,
+      players: [],
+    };
+  },
   components: {
+    Card,
     Navigation,
+  },
+  methods: {
+    add2(userData) {
+      this.axios
+        .post(
+          "https://helpdesk-d6624-default-rtdb.firebaseio.com/usterki.json",
+          userData
+        )
+        .then((response) => {
+          console.log("Sukces", response);
+        })
+        .catch((err) => console.log("Err", err));
+    },
+  },
+  async created() {
+    try {
+      let { data } = await this.axios.get(
+        "https://helpdesk-d6624-default-rtdb.firebaseio.com/silnik.json"
+      );
+      this.players = data;
+      this.loading = false;
+    } catch (e) {
+      console.log("pobieranie Error", e);
+    }
   },
 };
 </script>
 
 <style>
-.full-height {
-  height: 100%;
+.my-app {
+  padding: 50px 0;
 }
 
-.white-bg {
-  background: #fff !important;
+/* Fade transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
-
-.category {
-  width: 15%;
-  height: 15%;
-  float: left;
-  margin-left: 5%;
-}
-.picture {
-  margin-top: 10%;
-  height: 100%;
-  width: 100%;
-}
-.home {
-  margin-left: 20%;
-  float: left;
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

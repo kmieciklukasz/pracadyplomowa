@@ -2,6 +2,11 @@
   <div class="padding">
     <div class="log">
       <h1>Logowanie</h1>
+      <router-link to="/" tag="span"
+        ><button type="button" class="btn btn-primary">
+          powrót
+        </button></router-link
+      >
       <hr />
     </div>
     <div class="big">

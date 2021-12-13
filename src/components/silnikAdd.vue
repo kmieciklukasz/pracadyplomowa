@@ -1,6 +1,5 @@
 <template>
   <b-card title="Podaj swoje dane" header-tag="header" footer-tag="footer">
-    <h6 slot="header" class="mb-0">Jak możemy ci pomóc ?</h6>
     <b-card-text>
       <b-row class="my-2">
         <b-col sm="2">
@@ -10,8 +9,8 @@
           <b-form-input
             size="sm"
             type="text"
-            v-model="imie"
-            placeholder="Podaj swoje imię "
+            v-model="nazwa"
+            placeholder="Dodaj nazwe"
           />
         </b-col>
       </b-row>
@@ -32,14 +31,42 @@
 
       <b-row class="my-1">
         <b-col sm="2">
-          <label for="input-small">E-mail:</label>
+          <label for="input-small">Pojemność silnika:</label>
         </b-col>
         <b-col sm="10">
           <b-form-input
             size="sm"
             type="text"
-            v-model="email"
-            placeholder="Podaj E-mail, abyśmy mogli ci udzielić odpowiedzi"
+            v-model="pojemnosc"
+            placeholder="Podaj markę"
+          />
+        </b-col>
+      </b-row>
+
+      <b-row class="my-1">
+        <b-col sm="2">
+          <label for="input-small">Rok Wyprodukowania:</label>
+        </b-col>
+        <b-col sm="10">
+          <b-form-input
+            size="sm"
+            type="text"
+            v-model="rok"
+            placeholder="Podaj markę"
+          />
+        </b-col>
+      </b-row>
+
+      <b-row class="my-1">
+        <b-col sm="2">
+          <label for="input-small">Paliwo:</label>
+        </b-col>
+        <b-col sm="10">
+          <b-form-input
+            size="sm"
+            type="text"
+            v-model="paliwo"
+            placeholder="Dodaj paliwo"
           />
         </b-col>
       </b-row>
@@ -49,7 +76,7 @@
           <label for="input-small">Opisz problem:</label>
         </b-col>
         <b-col sm="10">
-          <b-form-input
+          <b-form-textarea
             size="sm"
             type="text"
             v-model="opis"
@@ -57,12 +84,38 @@
           />
         </b-col>
       </b-row>
+
+      <b-row class="my-1">
+        <b-col sm="2">
+          <label for="input-small">Rozwiązanie:</label>
+        </b-col>
+        <b-col sm="10">
+          <b-form-textarea
+            size="sm"
+            type="text"
+            v-model="rozwiazanie"
+            placeholder="Dodaj rozwiązanie"
+          />
+        </b-col>
+      </b-row>
+
+      <b-row class="my-1">
+        <b-col sm="2">
+          <label for="input-small">Zdjęcie:</label>
+        </b-col>
+        <b-col sm="10">
+          <b-form-textarea
+            size="sm"
+            type="text"
+            v-model="photo"
+            placeholder="Dodaj link do zdjęcia"
+          />
+        </b-col>
+      </b-row>
     </b-card-text>
 
     <div slot="footer">
-      <b-button variant="primary" :disabled="!canAdd" @click="add"
-        >Dodaj</b-button
-      >
+      <b-button variant="primary" @click="add">Dodaj</b-button>
     </div>
   </b-card>
 </template>
@@ -73,7 +126,7 @@ export default {
     return {
       imie: "",
       marka: "",
-      email: "",
+
       opis: "",
     };
   },
@@ -82,7 +135,6 @@ export default {
       return (
         this.imie.trim().length >= 3 &&
         this.marka.trim().length >= 3 &&
-        this.email.trim().length >= 3 &&
         this.opis.trim().length >= 3
       );
     },
@@ -90,10 +142,14 @@ export default {
   methods: {
     add() {
       this.$emit("add", {
-        imie: this.imie,
+        nazwa: this.nazwa,
         marka: this.marka,
-        email: this.email,
+        pojemnosc: this.pojemnosc,
+        rok: this.rok,
+        paliwo: this.paliwo,
         opis: this.opis,
+        rozwiazanie: this.rozwiazanie,
+        photo: this.photo,
       });
     },
   },
