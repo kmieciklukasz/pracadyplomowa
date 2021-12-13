@@ -41,6 +41,9 @@
           </router-link>
         </div>
       </div>
+      <b-container>
+        <silnikAdd @add="add" />
+      </b-container>
     </div>
 
     <div class="formularz"></div>
@@ -48,8 +51,25 @@
 </template>
 
 <script>
+import silnikAdd from "/Praca Dyplomowa/pracadyplomowa/src/components/form_admin/silnikAdd";
 export default {
+  components: {
+    silnikAdd,
+  },
   name: "Praco",
+  methods: {
+    add(userData) {
+      this.axios
+        .post(
+          "https://helpdesk-d6624-default-rtdb.firebaseio.com/silnik.json",
+          userData
+        )
+        .then((response) => {
+          console.log("sukces", response);
+        })
+        .catch((err) => console.log("Err", err));
+    },
+  },
 };
 </script>
 

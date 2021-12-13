@@ -66,7 +66,51 @@ export default new Router({
     {
       path: '/add_silnik',
       name: 'add_silnik',
-      component: () => import('./views/Pracownik/add_silnik.vue')
+      component: () => import('./views/Pracownik/add_usterki/add_silnik.vue')
+    },
+    {
+      path: '/add_detailing',
+      name: 'add_detailing',
+      component: () => import('./views/Pracownik/add_usterki/add_detailing.vue')
+    },
+    {
+      path: '/add_elektronika',
+      name: 'add_elektronika',
+      component: () => import('./views/Pracownik/add_usterki/add_elektronika.vue')
+    },
+    {
+      path: '/add_uklad',
+      name: 'add_uklad',
+      component: () => import('./views/Pracownik/add_usterki/add_uklad.vue')
+    },
+    {
+      path: '/add_zawieszenie',
+      name: 'add_zawieszenie',
+      component: () => import('./views/Pracownik/add_usterki/add_zawieszenie.vue')
+    },
+
+   
+    {
+      path: '/auto_detailing',
+      name: 'auto_detailing',
+      component: () => import('./views/Usterki/auto_detailing.vue')
+    },
+
+    {
+      path: '/zawieszenie',
+      name: 'zawieszenie',
+      component: () => import('./views/Usterki/Zawieszenie.vue')
+    },
+    {
+      path: '/uklad',
+      name: 'uklad',
+      component: () => import('./views/Usterki/Uklad.vue')
+    },
+
+    {
+      path: '/elektronika',
+      name: 'elektronika',
+      component: () => import('./views/Usterki/Elektronika.vue')
     },
 
   ]

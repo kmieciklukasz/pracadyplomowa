@@ -1,4 +1,4 @@
-<template  >
+<template>
   <div id="app">
     <div class="white-background">
       <Navigation />
@@ -9,7 +9,9 @@
     </transition>
 
     <b-jumbotron class="full-height white-bg">
-      <template v-slot:header>Popularne usterki</template>
+      <template v-slot:header
+        >Popularne usterki</template
+      >
 
       <template v-slot:lead>
         Tutaj możesz znaleźć popularne usterki wielu marek aut
@@ -26,21 +28,21 @@
         </div>
 
         <div class="category">
-          <router-link to="/register" tag="span">
+          <router-link to="/auto_detailing" tag="span">
             <img src="../assets/detailing.jpg" class="picture" />
             <p>Auto Detailing</p>
           </router-link>
         </div>
 
         <div class="category">
-          <router-link to="/register" tag="span">
+          <router-link to="/Zawieszenie" tag="span">
             <img src="../assets/zawieszenie.jpg" class="picture" />
             <p>Zawieszenie</p>
           </router-link>
         </div>
         <div class="home">
           <div class="category1">
-            <router-link to="/register" tag="span">
+            <router-link to="/Uklad" tag="span">
               <img src="../assets/uklad.jpg" class="picture" />
 
               <p>Układ dolotowy/Wydechowy</p>
@@ -48,7 +50,7 @@
           </div>
 
           <div class="category1">
-            <router-link to="/register" tag="span">
+            <router-link to="/Elektronika" tag="span">
               <img src="../assets/elektronika.jpg" class="picture" />
               <p>Elektronika</p>
             </router-link>

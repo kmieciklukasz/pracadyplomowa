@@ -1,5 +1,5 @@
 <template>
-  <b-card title="Podaj swoje dane" header-tag="header" footer-tag="footer">
+  <b-card title="Silnik" header-tag="header" footer-tag="footer">
     <b-card-text>
       <b-row class="my-2">
         <b-col sm="2">
@@ -107,7 +107,7 @@
           <b-form-textarea
             size="sm"
             type="text"
-            v-model="photo"
+            v-model="zdjecie"
             placeholder="Dodaj link do zdjęcia"
           />
         </b-col>
@@ -149,7 +149,7 @@ export default {
         paliwo: this.paliwo,
         opis: this.opis,
         rozwiazanie: this.rozwiazanie,
-        photo: this.photo,
+        zdjecie: this.zdjecie,
       });
     },
   },

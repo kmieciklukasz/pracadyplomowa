@@ -1,9 +1,9 @@
 <template>
-  <div id="app" style="margin-top:10px">
+  <div id="app">
     <Navigation />
     <b-jumbotron class="full-height white-bg">
       <template v-slot:header
-        >Silnik</template
+        >Uklad</template
       >
     </b-jumbotron>
     <hr class="my-4" />
@@ -55,7 +55,7 @@ export default {
     add2(userData) {
       this.axios
         .post(
-          "https://helpdesk-d6624-default-rtdb.firebaseio.com/silnik.json",
+          "https://helpdesk-d6624-default-rtdb.firebaseio.com/uklad.json",
           userData
         )
         .then((response) => {
@@ -67,7 +67,7 @@ export default {
   async created() {
     try {
       let { data } = await this.axios.get(
-        "https://helpdesk-d6624-default-rtdb.firebaseio.com/silnik.json"
+        "https://helpdesk-d6624-default-rtdb.firebaseio.com/uklad.json"
       );
       this.players = data;
       this.loading = false;

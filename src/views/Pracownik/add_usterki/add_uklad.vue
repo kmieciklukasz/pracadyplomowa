@@ -19,14 +19,26 @@
           <router-link to="/add_silnik" tag="span">
             <div class="nav"><div style="margin-left: 15%">Silnik</div></div>
           </router-link>
-          <div class="nav">
-            <div style="margin-left: 15%">Auto-Detailing</div>
-          </div>
-          <div class="nav"><div style="margin-left: 15%">Zawieszenie</div></div>
-          <div class="nav">
-            <div style="margin-left: 15%">Układ dolotowy</div>
-          </div>
-          <div class="nav"><div style="margin-left: 15%">Elektronika</div></div>
+          <router-link to="/add_detailing" tag="span">
+            <div class="nav">
+              <div style="margin-left: 15%">Auto-Detailing</div>
+            </div>
+          </router-link>
+          <router-link to="/add_zawieszenie" tag="span">
+            <div class="nav">
+              <div style="margin-left: 15%">Zawieszenie</div>
+            </div>
+          </router-link>
+          <router-link to="/add_uklad" tag="span">
+            <div class="nav">
+              <div style="margin-left: 15%">Układ dolotowy</div>
+            </div>
+          </router-link>
+          <router-link to="/add_elektronika" tag="span">
+            <div class="nav">
+              <div style="margin-left: 15%">Elektronika</div>
+            </div>
+          </router-link>
         </div>
       </div>
       <b-container>
@@ -39,7 +51,7 @@
 </template>
 
 <script>
-import silnikAdd from "/Praca Dyplomowa/pracadyplomowa/src/components/silnikAdd";
+import silnikAdd from "/Praca Dyplomowa/pracadyplomowa/src/components/form_admin/silnikAdd";
 export default {
   components: {
     silnikAdd,
@@ -49,7 +61,7 @@ export default {
     add(userData) {
       this.axios
         .post(
-          "https://helpdesk-d6624-default-rtdb.firebaseio.com/silnik.json",
+          "https://helpdesk-d6624-default-rtdb.firebaseio.com/uklad.json",
           userData
         )
         .then((response) => {
