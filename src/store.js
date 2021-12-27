@@ -39,6 +39,30 @@ export default new Vuex.Store({
         console.log(e);
       }
     },
+    async login2({ commit }, payload) {
+      try {
+        let response = await authAxios.post('accounts:signInWithPassword?key=AIzaSyBYjVBwmJBckUsh7SiIbsd9CWU1BZboA58', payload);
+        console.log(response);
+        commit('auth', {
+          token: response.data.idToken,
+          userId: response.data.localId,
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    async login3({ commit }, payload) {
+      try {
+        let response = await authAxios.post('accounts:signInWithPassword?key=AIzaSyAU-aZAehjZgeaGqv2EkJXZlDr8lfg1vvE', payload);
+        console.log(response);
+        commit('auth', {
+          token: response.data.idToken,
+          userId: response.data.localId,
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    },
 
     logout({ commit }) {
       commit('clearAuth');

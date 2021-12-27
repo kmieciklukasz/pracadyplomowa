@@ -53,16 +53,43 @@ export default new Router({
       name: 'panel',
       component: () => import('./views/Pracownik/panel.vue')
     },
+  
+
     {
       path: '/admin',
       name: 'admin',
-      component: () => import('./views/Pracownik/admin.vue')
+      component: () => import('./views/Pracownik/admin.vue'),
+      beforeEnter(to, from, next) {
+        if (store.getters.isAuth) {// sprawdzanie czy zalogowany
+          next();
+        } else {
+
+          alert("Musisz się zalogować");
+          next({ name: 'panel' });
+
+        }
+
+      }
     },
+   
+
     {
       path: '/pracc',
       name: 'pracc',
-      component: () => import('./views/Pracownik/pracc.vue')
+      component: () => import('./views/Pracownik/pracc.vue'),
+      beforeEnter(to, from, next) {
+        if (store.getters.isAuth) {// sprawdzanie czy zalogowany
+          next();
+        } else {
+
+          alert("Musisz się zalogować");
+          next({ name: 'panel' });
+
+        }
+
+      }
     },
+    
     {
       path: '/add_silnik',
       name: 'add_silnik',
@@ -112,6 +139,25 @@ export default new Router({
       name: 'elektronika',
       component: () => import('./views/Usterki/Elektronika.vue')
     },
+
+    {
+      path: '/logowanie_admin',
+      name: 'logowanie_admin',
+      component: () => import('./views/Pracownik/logowanie_admin.vue')
+    },
+
+    {
+      path: '/logowanie_pracownik',
+      name: 'logowanie_pracownik',
+      component: () => import('./views/Pracownik/logowanie_pracownik.vue')
+    },
+
+    {
+      path: '/odpowiedz',
+      name: 'odpowiedz',
+      component: () => import('./views/Pracownik/odpowiedz.vue')
+    },
+    
 
   ]
 })

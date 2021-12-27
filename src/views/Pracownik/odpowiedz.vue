@@ -51,6 +51,33 @@
           >
         </div>
       </div>
+      <b-container>
+        <transition name="fade" mode="out-in">
+          <div
+            key="1"
+            v-if="loading"
+            class="d-flex justify-content-center my-5"
+          >
+            <b-spinner variant="primary" />
+          </div>
+
+          <b-row key="2" v-else>
+            <b-col
+              sm="3"
+              :key="nodeId"
+              v-for="(player, nodeId) in players"
+              style="margin-right:100%; margin-bottom:5%"
+            >
+              <Card
+                :email="player.email"
+                :imie="player.imie"
+                :marka="player.marka"
+                :opis="player.opis"
+              />
+            </b-col>
+          </b-row>
+        </transition>
+      </b-container>
     </div>
 
     <div class="formularz"></div>
@@ -58,8 +85,43 @@
 </template>
 
 <script>
+import Card from "/Praca Dyplomowa/pracadyplomowa/src/components/Card_odp";
+
 export default {
   name: "Praco",
+  data() {
+    return {
+      loading: true,
+      players: [],
+    };
+  },
+  components: {
+    Card,
+  },
+  methods: {
+    add2(userData) {
+      this.axios
+        .post(
+          "https://helpdesk-d6624-default-rtdb.firebaseio.com/usterki.json",
+          userData
+        )
+        .then((response) => {
+          console.log("Sukces", response);
+        })
+        .catch((err) => console.log("Err", err));
+    },
+  },
+  async created() {
+    try {
+      let { data } = await this.axios.get(
+        "https://helpdesk-d6624-default-rtdb.firebaseio.com/usterki.json"
+      );
+      this.players = data;
+      this.loading = false;
+    } catch (e) {
+      console.log("pobieranie Error", e);
+    }
+  },
 };
 </script>
 

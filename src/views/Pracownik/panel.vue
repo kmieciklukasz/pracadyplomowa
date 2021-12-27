@@ -12,14 +12,16 @@
     <div class="big">
       <div class="admin">
         <h1>
-          <router-link to="/admin" tag="span"
+          <router-link to="/logowanie_admin" tag="span"
             >Logowanie Administratora</router-link
           >
         </h1>
       </div>
       <div class="prac">
         <h1>
-          <router-link to="/pracc" tag="span">Logowanie Pracownika</router-link>
+          <router-link to="/logowanie_pracownik" tag="span"
+            >Logowanie Pracownika</router-link
+          >
         </h1>
       </div>
     </div>
