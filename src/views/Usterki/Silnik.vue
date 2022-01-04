@@ -21,6 +21,7 @@
             style="margin-right:100%; margin-bottom:5%"
           >
             <Card
+              v-if="player.accept == 1"
               :nazwa="player.nazwa"
               :marka="player.marka"
               :pojemnosc="player.pojemnosc"
@@ -29,6 +30,7 @@
               :opis="player.opis"
               :rozwiazanie="player.rozwiazanie"
               :zdjecie="player.zdjecie"
+              :accept="player.accept"
             />
           </b-col>
         </b-row>

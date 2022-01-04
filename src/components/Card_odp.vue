@@ -29,7 +29,7 @@
     >
       <h3>Odpowiedz:</h3>
       <input type="hidden" name="_subject" value="Help-Desk" />
-      <input type="email" name="email" value="Podaj Email" /><br /><br />
+      <input type="email" name="email" v-model="email" /><br /><br />
 
       <textarea
         type="textarea"
@@ -79,7 +79,7 @@ export default {
   },
   computed: {
     fullName() {
-      return `${this.Opis} ${this.marka}`;
+      return `${this.marka}`;
     },
     photo() {
       return `${this.zdjecie} `;

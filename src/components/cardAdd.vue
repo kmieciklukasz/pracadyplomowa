@@ -60,8 +60,10 @@
     </b-card-text>
 
     <div slot="footer">
-      <b-button variant="primary" :disabled="!canAdd" @click="add"
-        >Dodaj</b-button
+      <router-link to="/przekierwoanie" tag="span">
+        <b-button variant="primary" :disabled="!canAdd" @click="add"
+          >Dodaj</b-button
+        ></router-link
       >
     </div>
   </b-card>

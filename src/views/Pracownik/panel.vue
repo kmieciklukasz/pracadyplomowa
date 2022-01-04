@@ -43,6 +43,7 @@ export default {};
   margin-left: 15%;
   border: solid;
   cursor: pointer;
+  border-color: rgb(171, 177, 187);
 }
 .prac {
   float: left;
@@ -51,6 +52,7 @@ export default {};
   height: 100%;
   border: solid;
   cursor: pointer;
+  border-color: rgb(171, 177, 187);
 }
 .admin:hover {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,

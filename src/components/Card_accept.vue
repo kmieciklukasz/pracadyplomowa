@@ -1,5 +1,5 @@
 <template>
-  <b-card :title="fullName" style="width: 65rem;" class="my-2">
+  <b-card :title="fullName" style="width: 45rem; margin-left:80%" class="my-2">
     <b-row class="my-1" v-if="isEditing">
       <b-col sm="12" class="editable--padding-bottom">
         <label for="input-small" class="smaller-text">Szczegóły:</label>
@@ -28,6 +28,22 @@
       v-if="isEditing"
       @click="isEditing = false"
       >Zwiń</b-button
+    >
+    <b-button
+      style="margin-left:5%"
+      variant="success"
+      size="sm"
+      v-if="isEditing"
+      @click="save"
+      >Zaakceptuj</b-button
+    >
+    <b-button
+      style="margin-left:5%"
+      variant="danger"
+      size="sm"
+      v-if="isEditing"
+      @click="remove"
+      >Usuń</b-button
     >
 
     <br />
@@ -79,6 +95,10 @@ export default {
       type: String,
       required: true,
     },
+    nodeId: {
+      type: String,
+      required: true,
+    },
   },
   computed: {
     fullName() {
@@ -91,7 +111,7 @@ export default {
       return `${this.nazwa} `;
     },
     full() {
-      return `Nazwa Problemu:${this.nazwa} 
+      return `Nazwa Problemu:${this.nazwa}
       Marka:${this.marka}
       Pojemność:${this.pojemnosc}
       Rok:${this.rok}
@@ -100,7 +120,27 @@ export default {
       Rozwiązanie:${this.rozwiazanie}`;
     },
   },
-  methods: {},
+
+  methods: {
+    add() {
+      this.$emit("add", {
+        accept: 1,
+      });
+    },
+    remove() {
+      if (confirm(`Czy na pewno chcesz usunąć to rozwiązanie?`)) {
+        this.$emit("delete", this.nodeId);
+      }
+    },
+    save() {
+      const names = 'this.names.split(" ");';
+      this.$emit("save", {
+        nodeId: this.nodeId,
+        accept: "1",
+      });
+    },
+  },
+
   mounted() {
     this.names = `${this.nazwa} ${this.marka} ${this.pojemnosc} ${this.rok} ${
       this.paliwo

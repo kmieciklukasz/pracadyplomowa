@@ -1,26 +1,23 @@
 <template>
   <div>
-    <div>
-      <h1>Pracownik</h1>
-      <router-link to="/panel" tag="span"
-        ><button type="button" class="btn btn-primary">
-          powrót
-        </button></router-link
-      >
-      <hr />
-    </div>
-
     <div class="box">
       <div class="left">
-        <div class="ad"><h1>Username</h1></div>
+        <div class="ad">
+          <h1>Panel Pracownika</h1>
+          <router-link to="/panel" tag="span"
+            ><button type="button" class="btn btn-primary">
+              powrót
+            </button></router-link
+          >
+        </div>
         <div class="lista">
-          <div class="nav1" style="background-color: rgb(85, 84, 84)">
+          <div class="nav1" style="background-color: rgb(22, 45, 66)">
             <h6>Dodaj rozwiązanie:</h6>
           </div>
-
           <router-link to="/add_silnik" tag="span">
             <div class="nav"><div style="margin-left: 15%">Silnik</div></div>
           </router-link>
+
           <router-link to="/add_detailing" tag="span">
             <div class="nav">
               <div style="margin-left: 15%">Auto-Detailing</div>
@@ -39,18 +36,21 @@
           <router-link to="/add_elektronika" tag="span">
             <div class="nav">
               <div style="margin-left: 15%">Elektronika</div>
-            </div>
-          </router-link>
+            </div> </router-link
+          ><br />
           <router-link to="/odpowiedz" tag="span">
             <div
               class="nav1"
-              style="background-color: rgb(85, 84, 84); cursor:pointer;"
+              style="background-color:  rgb(22, 45, 66); cursor:pointer;"
             >
               <h6>Odpowiedz na pytanie</h6>
             </div></router-link
           >
         </div>
       </div>
+      <b-container>
+        <silnikAdd @add="add" />
+      </b-container>
     </div>
 
     <div class="formularz"></div>
@@ -67,47 +67,48 @@ export default {
 .box {
   width: 100%;
   position: absolute;
-  height: 80%;
+  height: 100%;
 }
 
 .left {
-  background-color: gray;
-  width: 15%;
+  background-color: white;
+  width: 17%;
   float: left;
   height: 100%;
+  box-shadow: 3px 3px 6px black;
+  margin-right: 2%;
 }
 .ad {
-  background-color: rgb(112, 111, 111);
+  background-color: rgb(42, 85, 126);
   width: 100%;
   float: left;
-  height: 15%;
-  border-radius: 5px 5px 5px 5px;
+  height: 20%;
+  color: wheat;
 }
 .lista {
-  background-color: grey;
+  background-color: rgb(30, 61, 90);
   width: 100%;
   float: left;
   height: 85%;
-  border-radius: 5px 5px 5px 5px;
 }
 .nav1 {
   width: 70%;
   margin-top: 4%;
   color: white;
   margin-left: 15%;
-  border-radius: 5px 5px 5px 5px;
 }
 .nav {
   width: 70%;
   margin-top: 4%;
+  margin-left: 5%;
   color: white;
   margin-left: 15%;
-  border-radius: 5px 5px 5px 5px;
+
   cursor: pointer;
 }
 
 .nav:hover {
-  background-color: rgb(85, 84, 84);
+  background-color: rgb(22, 45, 66);
 }
 .formularz {
   height: 50%;

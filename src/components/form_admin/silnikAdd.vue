@@ -1,5 +1,5 @@
 <template>
-  <b-card title="Silnik" header-tag="header" footer-tag="footer">
+  <b-card title="" header-tag="header" footer-tag="footer">
     <b-card-text>
       <b-row class="my-2">
         <b-col sm="2">
@@ -150,6 +150,7 @@ export default {
         opis: this.opis,
         rozwiazanie: this.rozwiazanie,
         zdjecie: this.zdjecie,
+        accept: 0,
       });
     },
   },

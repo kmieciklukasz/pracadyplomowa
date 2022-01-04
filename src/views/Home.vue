@@ -85,6 +85,7 @@ export default {
   height: 16%;
   float: left;
   margin-left: 13%;
+  cursor: pointer;
 }
 
 .category1 {
@@ -92,6 +93,7 @@ export default {
   height: 16%;
   float: left;
   margin-left: 21%;
+  cursor: pointer;
 }
 .picture {
   margin-top: 10%;
