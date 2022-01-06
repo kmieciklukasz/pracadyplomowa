@@ -85,6 +85,32 @@ export default new Vuex.Store({
       }
     },
 
+    async uzytkownik({ commit }, payload) {
+      try {
+        let response = await authAxios.post('accounts:signUp?key=AIzaSyDqT_JsUn7wBQQxJzSL1SmtDwdNvqp7a9U', payload);
+        console.log(response);
+        commit('auth', {
+          token: response.data.idToken,
+          userId: response.data.localId,
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    },
+
+    async pracownik({ commit }, payload) {
+      try {
+        let response = await authAxios.post('accounts:signUp?key=AIzaSyAU-aZAehjZgeaGqv2EkJXZlDr8lfg1vvE', payload);
+        console.log(response);
+        commit('auth', {
+          token: response.data.idToken,
+          userId: response.data.localId,
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    },
+
 
 
   }

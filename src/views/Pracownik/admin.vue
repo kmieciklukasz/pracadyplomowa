@@ -18,32 +18,44 @@
             <div class="nav"><div style="margin-left: 15%">Silnik</div></div>
           </router-link>
 
-          <router-link to="/add_detailing" tag="span">
+          <router-link to="/detailing_accept" tag="span">
             <div class="nav">
               <div style="margin-left: 15%">Auto-Detailing</div>
             </div>
           </router-link>
-          <router-link to="/add_zawieszenie" tag="span">
+          <router-link to="/zawieszenie_accept" tag="span">
             <div class="nav">
               <div style="margin-left: 15%">Zawieszenie</div>
             </div>
           </router-link>
-          <router-link to="/add_uklad" tag="span">
+          <router-link to="/uklad_accept" tag="span">
             <div class="nav">
               <div style="margin-left: 15%">Układ dolotowy</div>
             </div>
           </router-link>
-          <router-link to="/add_elektronika" tag="span">
+          <router-link to="/elektronika_accept" tag="span">
             <div class="nav">
               <div style="margin-left: 15%">Elektronika</div>
             </div> </router-link
           ><br />
-          <div class="nav1" style="background-color: rgb(22, 45, 66)">
-            <h6>Zarządzaj użytkownikami</h6>
-          </div>
-          <div class="nav1" style="background-color: rgb(22, 45, 66)">
-            <h6>Zarządzaj pracownikami</h6>
-          </div>
+
+          <router-link to="/admin_uzytkownicy" tag="span">
+            <div
+              class="nav1"
+              style="background-color: rgb(22, 45, 66);cursor: pointer;"
+            >
+              <h6>Zarządzaj użytkownikami</h6>
+            </div></router-link
+          >
+
+          <router-link to="/admin_pracownicy" tag="span">
+            <div
+              class="nav1"
+              style="background-color: rgb(22, 45, 66); cursor: pointer;"
+            >
+              <h6>Zarządzaj pracownikami</h6>
+            </div></router-link
+          >
         </div>
       </div>
       <b-container>

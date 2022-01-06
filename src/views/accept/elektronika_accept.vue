@@ -40,12 +40,23 @@
               <div style="margin-left: 15%">Elektronika</div>
             </div> </router-link
           ><br />
-          <div class="nav1" style="background-color: rgb(22, 45, 66)">
-            <h6>Zarządzaj użytkownikami</h6>
-          </div>
-          <div class="nav1" style="background-color: rgb(22, 45, 66)">
-            <h6>Zarządzaj pracownikami</h6>
-          </div>
+          <router-link to="/admin_uzytkownicy" tag="span">
+            <div
+              class="nav1"
+              style="background-color: rgb(22, 45, 66);cursor: pointer;"
+            >
+              <h6>Zarządzaj użytkownikami</h6>
+            </div></router-link
+          >
+
+          <router-link to="/admin_pracownicy" tag="span">
+            <div
+              class="nav1"
+              style="background-color: rgb(22, 45, 66); cursor: pointer;"
+            >
+              <h6>Zarządzaj pracownikami</h6>
+            </div></router-link
+          >
         </div>
       </div>
     </div>

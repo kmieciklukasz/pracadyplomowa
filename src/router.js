@@ -254,6 +254,40 @@ export default new Router({
 
       }
     },
+
+    {
+      path: '/admin_pracownicy',
+      name: 'admin_pracownicy',
+      component: () => import('./views/admin/admin_pracownicy.vue'),
+      beforeEnter(to, from, next) {
+        if (store.getters.isAuth) {// sprawdzanie czy zalogowany
+          next();
+        } else {
+
+          alert("Musisz się zalogować");
+          next({ name: 'panel' });
+
+        }
+
+      }
+    },
+
+    {
+      path: '/admin_uzytkownicy',
+      name: 'admin_uzytkownicy',
+      component: () => import('./views/admin/admin_uzytkownicy.vue'),
+      beforeEnter(to, from, next) {
+        if (store.getters.isAuth) {// sprawdzanie czy zalogowany
+          next();
+        } else {
+
+          alert("Musisz się zalogować");
+          next({ name: 'panel' });
+
+        }
+
+      }
+    },
     
 
   ]
