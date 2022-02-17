@@ -11,10 +11,7 @@
     >
       <h6 slot="header" class="mb-0">Dziękujemy za złożenie zapytania.</h6>
       <h7>Oczekuj na odpowiedź na swojej skrzynce mailowej.</h7>
-      <meta
-        http-equiv="Refresh"
-        content="3;url=https://objective-mcclintock-109c5c.netlify.app"
-      />
+      <meta http-equiv="Refresh" content="3;url=/" />
       <b-card-text> </b-card-text>
     </b-card>
   </div>
