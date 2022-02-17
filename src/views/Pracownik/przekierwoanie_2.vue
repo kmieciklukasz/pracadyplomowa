@@ -13,7 +13,7 @@
         Dziękujemy za zarejstrowanie na naszej stronie.
       </h6>
       <h7>Możesz się pomyślnie zalogować.</h7>
-      <meta http-equiv="Refresh" content="3;url=/login" />
+      <meta http-equiv="Refresh" content="3;url=/" />
       <b-card-text> </b-card-text>
     </b-card>
   </div>
