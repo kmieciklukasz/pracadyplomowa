@@ -77,7 +77,7 @@
 import Navigation from "../components/Navigation.vue";
 import { required, minLength, email } from "vuelidate/lib/validators";
 import BFormInvalidFeedback from "bootstrap-vue/src/components/form/form-invalid-feedback";
-import Footer from "/Praca Dyplomowa/pracadyplomowa/src/components/Footer.vue";
+import Footer from "../components/Footer.vue";
 //import authAxios from "../auth-axios";
 export default {
   components: { BFormInvalidFeedback, Navigation, Footer },
