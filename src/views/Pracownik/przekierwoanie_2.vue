@@ -13,7 +13,10 @@
         Dziękujemy za zarejstrowanie na naszej stronie.
       </h6>
       <h7>Możesz się pomyślnie zalogować.</h7>
-      <meta http-equiv="Refresh" content="3;url=http://localhost:8080/login" />
+      <meta
+        http-equiv="Refresh"
+        content="3;url=https://objective-mcclintock-109c5c.netlify.app/login"
+      />
       <b-card-text> </b-card-text>
     </b-card>
   </div>
