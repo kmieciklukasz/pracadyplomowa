@@ -69,6 +69,7 @@
                     id="email"
                     type="email"
                     v-model="email"
+                    name="email"
                     @input="$v.email.$model = $event.trim()"
                     :state="!$v.email.$dirty ? null : !$v.email.$error"
                     required
@@ -108,6 +109,32 @@
                   </b-form-valid-feedback>
                 </b-form-group>
 
+                <b-form-group label="Powtórz hasło:" label-for="password1">
+                  <b-form-input
+                    id="password1"
+                    type="password"
+                    v-model="password1"
+                    @input="$v.password1.$model = $event.trim()"
+                    :state="!$v.password1.$dirty ? null : !$v.password1.$error"
+                    required
+                    placeholder="Podaj hasło"
+                  />
+
+                  <b-form-invalid-feedback>
+                    <span v-if="!$v.password1.required"
+                      >To pole jest wymagane.
+                    </span>
+                  </b-form-invalid-feedback>
+                  <b-form-invalid-feedback>
+                    <span v-if="password1 != password"
+                      >Hasło nie są takie same </span
+                    ><br />
+                  </b-form-invalid-feedback>
+                  <b-form-valid-feedback>
+                    <span>Wszystko jest okej. </span>
+                  </b-form-valid-feedback>
+                </b-form-group>
+
                 <b-button
                   type="submit"
                   variant="primary"
@@ -132,6 +159,7 @@ import Navigation from "/Praca Dyplomowa/pracadyplomowa/src/components/Navigatio
 import { required, minLength, email } from "vuelidate/lib/validators";
 import BFormInvalidFeedback from "bootstrap-vue/src/components/form/form-invalid-feedback";
 //import authAxios from "../auth-axios";
+import emailjs from "emailjs-com";
 export default {
   name: "Praco",
   components: { BFormInvalidFeedback, Navigation },
@@ -140,6 +168,7 @@ export default {
     return {
       email: "",
       password: "",
+      password1: "",
     };
   },
   validations: {
@@ -148,6 +177,10 @@ export default {
       email,
     },
     password: {
+      required,
+      minLength: minLength(8),
+    },
+    password1: {
       required,
       minLength: minLength(8),
     },
@@ -160,11 +193,29 @@ export default {
         password: this.password,
         returnSecureTokej: true,
       });
+      event.preventDefault();
+      emailjs
+        .sendForm(
+          "service_thtzvxr",
+          "template_p1nqf7c",
+          event.target,
+          "user_tlQd2gdFvwwnfnOuVDqCI"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            console.log(event.target);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
     },
     onReset(event) {
       event.preventDefault();
       this.email = "";
       this.password = "";
+      this.password1 = "";
       this.$v.$reset();
     },
   },

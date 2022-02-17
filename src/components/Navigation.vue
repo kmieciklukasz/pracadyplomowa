@@ -5,6 +5,12 @@
         >Strona Główna</b-nav-item
       ></router-link
     >
+    <router-link to="/chat" tag="li" class="nav-item"
+      ><b-nav-item :active="$route.name === 'register'"
+        >Chat</b-nav-item
+      ></router-link
+    >
+
     <router-link to="/register" tag="li" class="nav-item" v-if="!auth"
       ><b-nav-item :active="$route.name === 'register'"
         >Dołącz do nas</b-nav-item

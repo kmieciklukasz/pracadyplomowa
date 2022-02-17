@@ -2,15 +2,53 @@
   <b-card :title="fullName" style="width: 45rem; margin-left:80%" class="my-2">
     <b-row class="my-1" v-if="isEditing">
       <b-col sm="12" class="editable--padding-bottom">
-        <label for="input-small" class="smaller-text">Szczegóły:</label>
+        <b-row class="my-2">
+          <b-col sm="2">
+            <label for="input-small"><b>Pojemnosc:</b></label>
+          </b-col>
+          <b-col sm="10">
+            {{ this.pojemnosc }}
+          </b-col>
+        </b-row>
+
+        <b-row class="my-2">
+          <b-col sm="2">
+            <label for="input-small"><b>Rok:</b></label>
+          </b-col>
+          <b-col sm="10">
+            {{ this.rok }}
+          </b-col>
+        </b-row>
+
+        <b-row class="my-2">
+          <b-col sm="2">
+            <label for="input-small"><b>Paliwo:</b></label>
+          </b-col>
+          <b-col sm="10">
+            {{ this.paliwo }}
+          </b-col>
+        </b-row>
+
+        <b-row class="my-2">
+          <b-col sm="2">
+            <label for="input-small"><b>Opis problemu:</b></label>
+          </b-col>
+          <b-col sm="10">
+            {{ this.opis }}
+          </b-col>
+        </b-row>
+
+        <b-row class="my-2">
+          <b-col sm="2">
+            <label for="input-small"><b>Rozwiązanie:</b></label>
+          </b-col>
+          <b-col sm="10">
+            {{ this.rozwiazanie }}
+          </b-col>
+        </b-row>
 
         <b-card tag="article" class="my-2">
-          Pojemnosc:{{ this.pojemnosc }}<br />
-          Rok:{{ this.rok }}<br />
-          Paliwo:{{ this.paliwo }}<br />
-          Opis:{{ this.opis }}<br />
-          <b>Rozwiązanie:{{ this.rozwiazanie }}</b
-          ><br />
+          <br />
           <img :src="photo" style="width:50%;height:50%" />
         </b-card>
       </b-col>

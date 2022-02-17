@@ -38,7 +38,7 @@
             size="sm"
             type="text"
             v-model="pojemnosc"
-            placeholder="Podaj markę"
+            placeholder="Podaj pojemność"
           />
         </b-col>
       </b-row>
@@ -52,7 +52,7 @@
             size="sm"
             type="text"
             v-model="rok"
-            placeholder="Podaj markę"
+            placeholder="Podaj rok"
           />
         </b-col>
       </b-row>

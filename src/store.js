@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import authAxios from "./auth-axios";
 import router from './router';
+import emailjs from "emailjs-com";
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -80,9 +81,19 @@ export default new Vuex.Store({
           token: response.data.idToken,
           userId: response.data.localId,
         })
-      } catch (e) {
+        router.push('przekierwoanie_2');
+        
+     
+        
+      } 
+      catch (e) {
         console.log(e);
+        alert("Użytkownik już istnieje");
+
+        
+        
       }
+      
     },
 
     async uzytkownik({ commit }, payload) {
@@ -92,9 +103,12 @@ export default new Vuex.Store({
         commit('auth', {
           token: response.data.idToken,
           userId: response.data.localId,
+          
         })
+        alert("Użytkownik został dodany");
       } catch (e) {
         console.log(e);
+        alert("Użytkownik już istnieje");
       }
     },
 
@@ -106,8 +120,10 @@ export default new Vuex.Store({
           token: response.data.idToken,
           userId: response.data.localId,
         })
+        alert("Użytkownik został dodany");
       } catch (e) {
         console.log(e);
+        alert("Użytkownik już istnieje");
       }
     },
 

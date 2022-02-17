@@ -58,15 +58,21 @@
         </div>
       </div>
     </b-jumbotron>
+    <div class="white-background"></div>
+    <br />
+    <a style="color:white">dsad</a>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navigation from "/Praca Dyplomowa/pracadyplomowa/src/components/Navigation.vue";
+import Footer from "/Praca Dyplomowa/pracadyplomowa/src/components/Footer.vue";
 export default {
   name: "home",
   components: {
     Navigation,
+    Footer,
   },
 };
 </script>

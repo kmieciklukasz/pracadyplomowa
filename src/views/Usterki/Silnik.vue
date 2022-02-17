@@ -36,12 +36,14 @@
         </b-row>
       </transition>
     </b-container>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Card from "/Praca Dyplomowa/pracadyplomowa/src/components/Card";
 import Navigation from "/Praca Dyplomowa/pracadyplomowa/src/components/Navigation.vue";
+import Footer from "/Praca Dyplomowa/pracadyplomowa/src/components/Footer.vue";
 export default {
   data() {
     return {
@@ -52,6 +54,7 @@ export default {
   components: {
     Card,
     Navigation,
+    Footer,
   },
   methods: {
     add2(userData) {

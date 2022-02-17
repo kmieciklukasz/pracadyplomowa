@@ -22,10 +22,18 @@ export default new Router({
       name: 'register',
       component: () => import('./views/Register.vue')
     },
+
+  
     {
       path: '/login',
       name: 'login',
       component: () => import('./views/Login.vue')
+    },
+
+    {
+      path: '/chat',
+      name: 'chat',
+      component: () => import('./views/Chat/chat.vue')
     },
     {
       path: '/protected',
@@ -169,6 +177,12 @@ export default new Router({
       path: '/przekierwoanie',
       name: 'przekierwoanie',
       component: () => import('./views/Pracownik/przekierwoanie.vue')
+    },
+
+    {
+      path: '/przekierwoanie_2',
+      name: 'przekierwoanie_2',
+      component: () => import('./views/Pracownik/przekierwoanie_2.vue')
     },
     {
       path: '/detailing_accept',

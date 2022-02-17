@@ -36,11 +36,22 @@
         </b-col>
         <b-col sm="10">
           <b-form-input
-            size="sm"
-            type="text"
+            id="email"
+            type="email"
+            name="email"
             v-model="email"
-            placeholder="Podaj E-mail, abyśmy mogli ci udzielić odpowiedzi"
+            @input="$v.email.$model = $event.trim()"
+            :state="!$v.email.$dirty ? null : !$v.email.$error"
+            required
+            placeholder="Podaj adres email"
           />
+          <b-form-invalid-feedback>
+            <span v-if="!$v.email.required">To pole jest wymagane. </span>
+            <span v-if="!$v.email.email">Błędny adres email. </span>
+          </b-form-invalid-feedback>
+          <b-form-valid-feedback>
+            <span>Wszystko jest okej. </span>
+          </b-form-valid-feedback>
         </b-col>
       </b-row>
 
@@ -70,6 +81,7 @@
 </template>
 
 <script>
+import { required, minLength, email } from "vuelidate/lib/validators";
 export default {
   data() {
     return {
@@ -78,6 +90,12 @@ export default {
       email: "",
       opis: "",
     };
+  },
+  validations: {
+    email: {
+      required,
+      email,
+    },
   },
   computed: {
     canAdd() {

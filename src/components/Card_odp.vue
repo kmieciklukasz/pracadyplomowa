@@ -23,21 +23,14 @@
     >
 
     <form
-      action="https://formsubmit.co/kmiecik39@gmail.com"
+      action="https://formsubmit.co/kmiecikpiotr913@gmail.com"
       method="POST"
       v-if="isEditing"
     >
       <h3>Odpowiedz:</h3>
-      <input type="hidden" name="_subject" value="Help-Desk" />
-      <input type="email" name="email" v-model="email" /><br /><br />
-
-      <textarea
-        type="textarea"
-        name="message"
-        placeholder="Napisz swoją odpowiedź"
-        required
-      /><br /><br />
-      <b-button variant="success">Wyślij</b-button><br /><br />
+      <textarea type="text" name="name" required /><br />
+      <input type="email" name="email" v-model="email" required />
+      <button variant="success" type="submit">Wyślij</button><br />
     </form>
     <b-button
       variant="danger"
