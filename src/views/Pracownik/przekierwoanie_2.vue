@@ -5,7 +5,7 @@
     </transition>
 
     <b-card
-      title="Za chwile nastąpi przekierwoanie na stronę logowania."
+      title="Za chwile nastąpi przekierwoanie na stronę główną."
       header-tag="header"
       footer-tag="footer"
     >
