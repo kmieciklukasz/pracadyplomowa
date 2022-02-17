@@ -39,9 +39,9 @@
 </template>
 
 <script>
-import Card from "/Praca Dyplomowa/pracadyplomowa/src/components/Card";
-import Navigation from "/Praca Dyplomowa/pracadyplomowa/src/components/Navigation.vue";
-import Footer from "/Praca Dyplomowa/pracadyplomowa/src/components/Footer.vue";
+import Card from "../../components/Card";
+import Navigation from "../../components/Navigation.vue";
+import Footer from "../../components/Footer.vue";
 export default {
   data() {
     return {

@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import silnikAdd from "/Praca Dyplomowa/pracadyplomowa/src/components/form_admin/silnikAdd";
+import silnikAdd from "../../../components/form_admin/silnikAdd";
 export default {
   components: {
     silnikAdd,

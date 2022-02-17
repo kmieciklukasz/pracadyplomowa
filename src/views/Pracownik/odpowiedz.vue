@@ -82,7 +82,7 @@
 </template>
 
 <script>
-import Card from "/Praca Dyplomowa/pracadyplomowa/src/components/Card_odp";
+import Card from "../../components/Card_odp";
 
 export default {
   name: "Praco",

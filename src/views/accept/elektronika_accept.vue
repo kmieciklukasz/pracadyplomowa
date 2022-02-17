@@ -103,8 +103,8 @@
 </template>
 
 <script>
-import Card from "/Praca Dyplomowa/pracadyplomowa/src/components/Card_accept";
-import Navigation from "/Praca Dyplomowa/pracadyplomowa/src/components/Navigation.vue";
+import Card from "../../components/Card_accept";
+import Navigation from "../../components/Navigation.vue";
 export default {
   name: "Praco",
   data() {
